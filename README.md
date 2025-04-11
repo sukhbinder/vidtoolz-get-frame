@@ -7,6 +7,8 @@
 
 Get frame out of a video for thumbnail
 
+![vidtoolz-get-frame demo](https://raw.githubusercontent.com/sukhbinder/vidtoolz-get-frame/refs/heads/main/demo.png)
+
 ## Installation
 
 First install [vidtoolz](https://github.com/sukhbinder/vidtoolz).
@@ -24,7 +26,25 @@ vidtoolz install vidtoolz-get-frame
 
 type ``vid getframe --help`` to get help
 
+```bash
 
+usage: vid getframe [-h] [-n NUM] [-o OUTDIR] [-t [TIMES ...]] fname
+
+Get frame out of a video for thumbnail
+
+positional arguments:
+  fname                 MOV Mp4 file from which frames has to be extracted
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n NUM, --num NUM     No of frames to collect
+  -o OUTDIR, --outdir OUTDIR
+                        Output dir
+  -t [TIMES ...], --times [TIMES ...]
+                        Specific times in seconds to extract frames.
+
+
+```
 
 ## Development
 
