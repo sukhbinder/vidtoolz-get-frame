@@ -1,0 +1,33 @@
+[project]
+name = "vidtoolz-get-frame"
+version = "0.0.1"
+description = "Get frame out of a video for thumbnail"
+readme = "README.md"
+authors = [{name = "Sukhbinder Singh"}]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "License :: OSI Approved :: Apache Software License"
+]
+dependencies = [
+    "vidtoolz",
+]
+
+[project.urls]
+Homepage = "https://github.com/sukhbinder/vidtoolz-get-frame"
+Changelog = "https://github.com/sukhbinder/vidtoolz-get-frame/releases"
+Issues = "https://github.com/sukhbinder/vidtoolz-get-frame/issues"
+CI = "https://github.com/sukhbinder/vidtoolz-get-frame/actions"
+
+[project.entry-points."vidtoolz_plugins"]
+getframe = "vidtoolz_get_frame:getframe_plugin"
+
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
