@@ -30,6 +30,7 @@ def get_and_save_frames(fname, num=10, outdir=None, times=None):
         if outdir:
             frame_name = os.path.join(outdir, frame_name)
         vid.save_frame(frame_name, t)
+    vid.close()
 
 
 def create_parser(subparser):
@@ -62,7 +63,10 @@ class ViztoolzPlugin:
     @vidtoolz.hookimpl
     def register_commands(self, subparser):
         self.parser = create_parser(subparser)
-        self.parser.set_defaults(func=self.hello)
+        self.parser.set_defaults(func=self.run)
+    
+    def run(self, args):
+        get_and_save_frames(args.fname, num=args.num, outdir=args.outdir, times=args.times)
 
     def hello(self, args):
         # this routine will be called when "vidtoolz "getframe is called."
